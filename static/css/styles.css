@@ -1,0 +1,41 @@
+body{
+    margin:0;
+}
+.navbar{
+    background-color:#0A6847;
+    height:150px;
+
+
+}
+.navbar h1{
+    text-align:center;
+    color:white;
+    margin-top:0;
+    padding-top:60px;
+}
+.content{
+    background-color:#7ABA78;
+    padding:50px;
+}
+.content h2{
+    color:white;
+    text-align:center;
+}
+
+.form{
+    text-align:center;
+}
+.form label{
+    color:white;
+}
+.form a button{
+    margin-top:10px;
+    background-color:green;
+}
+
+
+.form a button:hover{
+    color:green;
+    background-color:white;
+    border: 1px solid green;
+}

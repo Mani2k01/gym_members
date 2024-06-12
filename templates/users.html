@@ -1,0 +1,77 @@
+{% include "header.html" %}
+<style>
+    body{
+        background-color:#B3E2A7;
+        display:flex;
+        justify-content:center;
+        margin:0;
+        height: 100vh;
+
+    }
+    .container{
+        background-color:#7ABA78;
+        text-align:center;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+    .container h2{
+        color:white;
+        margin-top:50px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+
+        margin-top:50;
+    }
+    th{
+        text-align:center;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        color:white;
+    }
+
+    td {
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        text-align: left;
+        color:white;
+    }
+    .container a button{
+        margin-top:10px;
+        background-color:green;
+    }
+    .container a button:hover{
+        color:green;
+        background-color:white;
+        border: 1px solid green;
+    }
+
+</style>
+
+<div class="container">
+        <div>
+            <h2>All Registered Users</h2>
+            <table border="1">
+                <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Number</th>
+                </tr>
+
+                {% for user in users %}
+                <tr>
+                    <td>{{user.id}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.age}}</td>
+                    <td>{{user.number}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            <a href="{{url_for('home')}}">
+                <button class="btn btn-primary btn">Return Home</button>
+            </a>
+        </div>
+</div>

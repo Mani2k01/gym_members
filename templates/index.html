@@ -1,0 +1,60 @@
+{% include "header.html" %}
+<body>
+
+    <div>
+        <div class="navbar">
+            <h1> Bullet Gym</h1>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <div class="content">
+            <div>
+                <h2>Member Form:</h2>
+            </div>
+            <div class="form">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category,message in messages %}
+                        <div class="alert alert-{{category}}">{{message}}</div>
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+
+                <form method="post" action="{{url_for('home')}}">
+                    <div class="mail" style="margin-top:30px;">
+                        <label>Name:</label>
+                        <input type="text" name="name" placeholder="Name" required>
+                    </div>
+                    <div class="age" style="margin-top:10px;padding-left:10px;">
+                        <label>Age:</label>
+                        <input type="text" name="age" placeholder="Age" required>
+                    </div>
+                    <div class="number" style="margin-top:10px;padding-right:12px; ">
+                        <label>Number:</label>
+                        <input type="text" name="number" placeholder="Number" required>
+                    </div>
+                    <div class="submit">
+                        <a class="button" style="margin-top:10px;" >
+                            <button type="submit" class="btn btn-primary btn">Submit</button>
+                        </a>
+                    </div>
+                </form>
+                <a href="{{url_for('users')}}" class="user-button">
+                            <button  class="btn btn-primary btn" >View Members</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+<script>
+    $(document).ready(function(){
+        $(".alert").hide(5000)
+    });
+</script>
+</html>
