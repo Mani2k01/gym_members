@@ -13,7 +13,7 @@ client = Client(account_sid, auth_token)
 sender_id='Bullet Gym'
 
 ### for database ###
-app.config['SQLALCHEMY_DATABASE_URI']=os.environ.get("DATABASE_URI)
+app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
 db=SQLAlchemy(app)
 
